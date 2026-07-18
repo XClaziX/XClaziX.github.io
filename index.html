@@ -4,255 +4,190 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XClaziX — Games</title>
-  <meta name="description" content="Indie Android games by XClaziX / clxon24 — ArrowBeasts and PATHORA." />
+  <meta name="description" content="Indie Android games by XClaziX — ArrowBeasts and PATHORA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #071012;
-      --bg2: #0d2226;
-      --panel: rgba(14, 36, 40, 0.72);
+      --bg: #060c0e;
       --text: #f2f7f4;
       --muted: #8fa8a3;
       --mint: #2ee6a6;
-      --mint-dim: rgba(46, 230, 166, 0.14);
-      --line: rgba(46, 230, 166, 0.22);
-      --coral: #ff7a59;
+      --line: rgba(255, 255, 255, 0.12);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
       font-family: "Outfit", system-ui, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(900px 480px at 80% -10%, rgba(46, 230, 166, 0.16), transparent 60%),
-        radial-gradient(700px 420px at 10% 20%, rgba(255, 122, 89, 0.08), transparent 55%),
-        linear-gradient(165deg, var(--bg2), var(--bg) 45%, #050a0b);
-      overflow-x: hidden;
-    }
-
-    .noise {
-      pointer-events: none;
-      position: fixed;
-      inset: 0;
-      opacity: 0.04;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      z-index: 0;
+        radial-gradient(800px 400px at 70% -5%, rgba(46, 230, 166, 0.12), transparent 55%),
+        radial-gradient(600px 360px at 10% 30%, rgba(255, 100, 160, 0.08), transparent 50%),
+        #060c0e;
     }
 
     main {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: clamp(2.5rem, 8vw, 5rem) 1.25rem 4rem;
+      padding: clamp(2rem, 6vw, 3.5rem) 1.1rem 3.5rem;
     }
 
     .brand {
       font-family: "Syne", sans-serif;
       font-weight: 800;
-      font-size: clamp(2.6rem, 9vw, 4.2rem);
+      font-size: clamp(2.2rem, 7vw, 3.4rem);
       letter-spacing: -0.03em;
-      line-height: 0.95;
       margin: 0;
-      background: linear-gradient(120deg, #fff 20%, var(--mint) 70%, #9ff5d4);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: rise 0.8s ease-out both;
+      line-height: 1;
     }
-
     .tagline {
-      margin: 1rem 0 0;
-      max-width: 28rem;
+      margin: 0.65rem 0 0;
       color: var(--muted);
-      font-size: 1.05rem;
-      animation: rise 0.9s ease-out 0.08s both;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.75rem;
-      animation: rise 1s ease-out 0.14s both;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55rem 0.95rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--mint-dim);
-      color: var(--mint);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-    }
-    .pill:hover {
-      transform: translateY(-2px);
-      background: rgba(46, 230, 166, 0.22);
-      border-color: rgba(46, 230, 166, 0.45);
-    }
-
-    .section-label {
-      margin: 3.25rem 0 1rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--mint);
-      animation: rise 1s ease-out 0.2s both;
+      font-size: 1.02rem;
+      max-width: 32rem;
     }
 
     .games {
       display: grid;
-      gap: 1rem;
+      gap: 1.35rem;
+      margin-top: 2.25rem;
     }
 
     .game {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      padding: 1.35rem 1.4rem;
-      border-radius: 20px;
+      border-radius: 22px;
+      overflow: hidden;
       border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(46, 230, 166, 0.08), transparent 40%),
-        var(--panel);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      animation: rise 1s ease-out both;
+      background: #0b1518;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
-    .game:nth-child(1) { animation-delay: 0.22s; }
-    .game:nth-child(2) { animation-delay: 0.3s; }
     .game:hover {
       transform: translateY(-4px);
-      border-color: rgba(46, 230, 166, 0.5);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+      border-color: rgba(46, 230, 166, 0.35);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
     }
 
-    .game-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
+    .banner {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1024 / 500;
+      object-fit: cover;
+      background: #0a1214;
     }
-    .game h2 {
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      padding: 1rem 1.2rem 1.15rem;
+    }
+    .meta h2 {
+      margin: 0;
       font-family: "Syne", sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       font-weight: 800;
-      margin: 0 0 0.25rem;
       letter-spacing: -0.02em;
     }
     .pkg {
+      margin: 0.15rem 0 0;
       color: var(--muted);
-      font-size: 0.82rem;
-      font-variant-numeric: tabular-nums;
+      font-size: 0.8rem;
     }
-    .badge {
-      flex-shrink: 0;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--bg);
-      background: var(--mint);
-      padding: 0.3rem 0.55rem;
-      border-radius: 8px;
-    }
-    .badge.alt { background: var(--coral); }
-
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.85rem 1.15rem;
-      margin-top: 1.1rem;
-      font-size: 0.92rem;
-      font-weight: 600;
+      gap: 0.55rem;
     }
     .links a {
-      color: var(--mint);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
+      color: #061014;
+      background: var(--mint);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      transition: filter 0.2s ease, transform 0.2s ease;
     }
-    .links a:hover { border-bottom-color: var(--mint); }
+    .links a:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+    .links a.ghost {
+      background: transparent;
+      color: var(--mint);
+      border: 1px solid rgba(46, 230, 166, 0.45);
+    }
 
     .foot {
-      margin-top: 3rem;
-      padding-top: 1.25rem;
+      margin-top: 2.5rem;
+      padding-top: 1.1rem;
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 0.88rem;
-      animation: rise 1s ease-out 0.36s both;
     }
     .foot a { color: var(--mint); }
 
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
+      .game { transition: none; }
     }
   </style>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
   <main>
     <h1 class="brand">XClaziX</h1>
-    <p class="tagline">Indie Android games — puzzles with a pulse. Built by clxon24.</p>
-    <div class="cta-row">
-      <a class="pill" href="#games">Games</a>
-      <a class="pill" href="/app-ads.txt">app-ads.txt</a>
-    </div>
+    <p class="tagline">Indie Android games by clxon24.</p>
 
-    <p class="section-label" id="games">Games</p>
-    <div class="games">
+    <section class="games" aria-label="Games">
       <article class="game">
-        <div class="game-top">
+        <img
+          class="banner"
+          src="img/arrowbeasts-banner.png"
+          width="1024"
+          height="500"
+          alt="ArrowBeasts: Escape Puzzle"
+          loading="eager"
+        />
+        <div class="meta">
           <div>
             <h2>ArrowBeasts</h2>
-            <div class="pkg">Escape Puzzle · com.clxon24.arrowpath</div>
+            <p class="pkg">Escape Puzzle · com.clxon24.arrowpath</p>
           </div>
-          <span class="badge">Live</span>
-        </div>
-        <div class="links">
-          <a href="https://xclazix.github.io/arrowbeasts-privacy/">Privacy</a>
-          <a href="https://xclazix.github.io/arrowbeasts-privacy/delete-account.html">Account deletion</a>
+          <div class="links">
+            <a href="https://xclazix.github.io/arrowbeasts-privacy/">Privacy</a>
+            <a class="ghost" href="https://xclazix.github.io/arrowbeasts-privacy/delete-account.html">Account deletion</a>
+          </div>
         </div>
       </article>
 
       <article class="game">
-        <div class="game-top">
+        <img
+          class="banner"
+          src="img/pathora-banner.png"
+          width="1024"
+          height="500"
+          alt="PATHORA"
+          loading="lazy"
+        />
+        <div class="meta">
           <div>
             <h2>PATHORA</h2>
-            <div class="pkg">Energy Grid · com.clxon24.pathora</div>
+            <p class="pkg">Energy Grid · com.clxon24.pathora</p>
           </div>
-          <span class="badge alt">Live</span>
-        </div>
-        <div class="links">
-          <a href="https://xclazix.github.io/pathora-privacy/">Privacy</a>
+          <div class="links">
+            <a href="https://xclazix.github.io/pathora-privacy/">Privacy</a>
+          </div>
         </div>
       </article>
-    </div>
+    </section>
 
     <p class="foot">
-      AdMob seller file for all apps:
-      <a href="/app-ads.txt">xclazix.github.io/app-ads.txt</a>
+      AdMob authorization for all apps:
+      <a href="/app-ads.txt">app-ads.txt</a>
     </p>
   </main>
 </body>
