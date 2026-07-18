@@ -5,16 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XClaziX — Games</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; color: #222; }
-    a { color: #0b6e99; }
+    :root {
+      --bg: #0b1c1e;
+      --text: #f4f7f2;
+      --muted: #a8b8b4;
+      --mint: #2ee6a6;
+      --line: rgba(46, 230, 166, 0.25);
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background: radial-gradient(1000px 500px at 50% -10%, #1a3d40 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    h1 { font-size: 1.75rem; margin: 0 0 0.35rem; }
+    .tag { color: var(--muted); margin: 0 0 1.75rem; }
+    h2 {
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--mint);
+      margin: 1.75rem 0 0.75rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+    }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li {
+      background: rgba(18, 42, 45, 0.75);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      margin: 0 0 0.75rem;
+    }
+    li strong { display: block; margin-bottom: 0.25rem; }
+    a { color: var(--mint); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta { color: var(--muted); font-size: 0.92rem; }
   </style>
 </head>
 <body>
-  <h1>XClaziX</h1>
-  <p>Indie Android games.</p>
-  <ul>
-    <li><a href="https://xclazix.github.io/pathora-privacy/">PATHORA — Privacy</a></li>
-    <li><a href="/app-ads.txt">app-ads.txt</a> (AdMob authorization)</li>
-  </ul>
+  <main>
+    <h1>XClaziX</h1>
+    <p class="tag">Indie Android games by clxon24.</p>
+
+    <h2>Games</h2>
+    <ul>
+      <li>
+        <strong>ArrowBeasts: Escape Puzzle</strong>
+        <span class="meta">com.clxon24.arrowpath</span><br />
+        <a href="https://xclazix.github.io/arrowbeasts-privacy/">Privacy Policy</a>
+        ·
+        <a href="https://xclazix.github.io/arrowbeasts-privacy/delete-account.html">Account deletion</a>
+      </li>
+      <li>
+        <strong>PATHORA</strong>
+        <span class="meta">com.clxon24.pathora</span><br />
+        <a href="https://xclazix.github.io/pathora-privacy/">Privacy Policy</a>
+      </li>
+    </ul>
+
+    <h2>Ads</h2>
+    <ul>
+      <li>
+        <a href="/app-ads.txt">app-ads.txt</a>
+        <span class="meta"> — AdMob seller authorization for all apps on this account</span>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>
